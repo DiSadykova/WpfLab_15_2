@@ -1,0 +1,519 @@
+﻿<Window x:Class="WpfLab_15_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfLab_15_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Очистить" Width="100" Click="Button_Click" />
+            <Button Content="Сохранить" Width="100" Click="Button_Click_1" />
+            <Button Content="Открыть" Width="100" Click="Button_Click_2"/>
+        </StackPanel>
+        <FlowDocumentScrollViewer Grid.Row="1" x:Name="docViewer">
+            <FlowDocument>
+                <!-- Название с гиперссылкой -->
+                <Paragraph TextAlignment="Center">
+                    <Hyperlink NavigateUri="https://disk.yandex.ru/i/KXa6mPg9amd9Pw">Купеческая сельская усадебная застройка конца XIX - начала XX вв. на территории нижнего прикамья</Hyperlink>
+                </Paragraph>
+                <!-- Содержание -->
+                <Paragraph>
+                    <Floater Width="350" HorizontalAlignment="Left">
+                        <BlockUIContainer>
+                            <Image Source="Data/analiz.jpg"/>
+                        </BlockUIContainer>
+                    </Floater>
+                    Данное исследование проведено в рамках работы "Стратегия управления сельской жилой архитектурой купечества Нижнего Прикамья конца XIX-начала XXвв" и включает в себя:
+                </Paragraph>
+                <List MarkerStyle="Box">
+                    <ListItem>
+                        <Paragraph>
+                            <Bold>Анализ сохранности</Bold> сельской усадебной архитектуры рубежа XIX-XX вв. Нижнего Прикамья
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>
+                            Оценку потенциала сохранения и использования сельской усадебной архитектуры купечества Нижнего Прикамья рубежа XIX-XX века.
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>
+                            Стратегию управления наследием сельской усадебной архитектуры купечества Нижнего Прикамья.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph>
+                    Далее представлены результаты анализа сохранности. Проанализированы
+                    <Run Foreground="Red">30 объектов.</Run>
+                </Paragraph>
+                <!-- Таблицы с результатами -->
+                <Section FontSize="14">
+                    <!-- Комплексность -->
+                    <Paragraph TextAlignment="Center">
+                        <Floater Width="180" HorizontalAlignment="Right">
+                            <BlockUIContainer>
+                                <Image Source="Data/kompleksnost.jpg"/>
+                            </BlockUIContainer>
+                        </Floater>
+                        <Underline>Комплексность сохранившейся сельской купеческой усадебной архитектуры Нижнего Прикамья рубежа XIX - XX вв.</Underline>
+                    </Paragraph>
+                    <Table>
+                        <Table.Columns>
+                            <TableColumn Width="6*" />
+                            <TableColumn Width="*"/>
+                            <TableColumn Width="*"/>
+                            <TableColumn Width="*"/>
+                        </Table.Columns>
+                        <TableRowGroup>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Степень сохранности
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        Оценка в процентах
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        Оценка в количестве n/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        Цвет
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Сохранился комплекс зданий в исторических границах усадьбы
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        3,33%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        1/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#ebedec"/>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Сохранилось несколько построек усадьбы
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        16,67%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        5/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#fde1bc"/>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Сохранился только главный дом усадьбы
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        70%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        21/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#f4e2de"/>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Сохраннилась только дворовая постройка усадьбы
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        3,33%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        1/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#a8c6d1"/>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Усадьба не сохранилась
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        6,67%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        2/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#a5d2ab"/>
+                            </TableRow>
+                        </TableRowGroup>
+                    </Table>
+                    <!-- Физическая сохранность -->
+                    <Paragraph TextAlignment="Center">
+                        <Floater Width="180" HorizontalAlignment="Left">
+                            <BlockUIContainer>
+                                <Image Source="Data/fiz.jpg"/>
+                            </BlockUIContainer>
+                        </Floater>
+                        <Underline>Физическая сохранность сельской купеческой усадебной архитектуры Нижнего Прикамья рубежа XIX - XX вв.</Underline>
+                    </Paragraph>
+                    <Table>
+                        <Table.Columns>
+                            <TableColumn Width="6*" />
+                            <TableColumn Width="*"/>
+                            <TableColumn Width="*"/>
+                            <TableColumn Width="*"/>
+                        </Table.Columns>
+                        <TableRowGroup>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Степень сохранности
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        Оценка в процентах
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        Оценка в количестве n/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        Цвет
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Утраченные объекты
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        6,67%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        2/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#fde1bc"/>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Руинированные объекты
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        10%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        3/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#ebedec"/>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Объекты в аварийном состоянии
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        10%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        3/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#a5d2ab"/>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Объекты в ограниченно-работоспособном состоянии
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        30%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        9/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#a8c6d1"/>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Объекты в работоспособном состоянии
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        43,33%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        13/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#f4e2de"/>
+                            </TableRow>
+                        </TableRowGroup>
+                    </Table>
+                    <!-- Использование -->
+                    <Paragraph TextAlignment="Center">
+                        <Floater Width="180" HorizontalAlignment="Right">
+                            <BlockUIContainer>
+                                <Image Source="Data/isp.jpg"/>
+                            </BlockUIContainer>
+                        </Floater>
+                        <Underline>Использование сельской купеческой усадебной архитектуры Нижнего Прикамья рубежа XIX - XX вв.</Underline>
+                    </Paragraph>
+                    <Table>
+                        <Table.Columns>
+                            <TableColumn Width="6*" />
+                            <TableColumn Width="*"/>
+                            <TableColumn Width="*"/>
+                            <TableColumn Width="*"/>
+                        </Table.Columns>
+                        <TableRowGroup>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Критерий
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        Оценка в процентах
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        Оценка в количестве n/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        Цвет
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Используемые
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        63,33%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        19/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#a8c6d1"/>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Неиспользуемые
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        36,67%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        11/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#fde1bc"/>
+                            </TableRow>
+                        </TableRowGroup>
+                    </Table>
+                    <!-- Сохранность историко-культ идентичности -->
+                    <Paragraph TextAlignment="Center">
+                        <Floater Width="180" HorizontalAlignment="Left">
+                            <BlockUIContainer>
+                                <Image Source="Data/istkult.jpg"/>
+                            </BlockUIContainer>
+                        </Floater>
+                        <Underline>Сохранность историко-культурной идентичности сельской купеческой усадебной архитектуры Нижнего Прикамья рубежа XIX - XX вв.</Underline>
+                    </Paragraph>
+                    <Table>
+                        <Table.Columns>
+                            <TableColumn Width="6*" />
+                            <TableColumn Width="*"/>
+                            <TableColumn Width="*"/>
+                            <TableColumn Width="*"/>
+                        </Table.Columns>
+                        <TableRowGroup>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Критерий
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        Оценка в процентах
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        Оценка в количестве n/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        Цвет
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Историко-культурная идентичность утрачена (отсутствует)
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        10%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        3/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#fde1bc"/>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Историко-культурная идентичность сохранилась плохо
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        33,33%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        10/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#ebedec"/>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Историко-культурная идентичность не комплексная
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        43,33%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        13/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#a5d2ab"/>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        Историко-культурная идентичность комплексная
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        13,33%
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        4/30
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Background="#a8c6d1"/>
+                            </TableRow>
+                        </TableRowGroup>
+                    </Table>
+                </Section>
+                <BlockUIContainer>
+                    <StackPanel>
+                        <TextBlock Text="Перейти к оценке потенциала сохранения и использования"/>
+                        <Button Content="Перейти"/>
+                    </StackPanel>
+                </BlockUIContainer>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</Window>
